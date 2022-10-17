@@ -1,7 +1,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['github.com', 'k.kakaocdn.net'],
+    domains: ['github.com', 'k.kakaocdn.net', 'www.hellogsm.kr'],
   },
   env: {
     NEIS_API_KEY: process.env.NEIS_API_KEY,
