@@ -9,11 +9,17 @@ import { MypagePage } from 'PageContainer';
 const MyPage: NextPage<StatusType> = ({ data }) => {
   const seoTitle = '내 정보';
   const desc = '내 정보를 확인하고 원서 관리 및 원서 출력 등을 할 수 있습니다.';
+  const mockData = {
+    name: '김형록',
+    userImg:
+      'https://www.hellogsm.kr/_next/image?url=http%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbwVEX3%2FbtrLnspDyIs%2FlYaMdSVmMx7jaK8WqlY9b1%2Fimg_640x640.jpg&w=384&q=75',
+    application: null,
+  };
 
   return (
     <>
       <SEOHelmet seoTitle={seoTitle} desc={desc} />
-      <MypagePage data={data} />
+      <MypagePage data={mockData} />
     </>
   );
 };
@@ -36,9 +42,9 @@ const getStatus = async (accessToken: string) => {
     console.log(error);
     return {
       props: {},
-      redirect: {
-        destination: '/auth/signin',
-      },
+      // redirect: {
+      //   destination: '/auth/signin',
+      // },
     };
   }
 };
@@ -69,18 +75,18 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
         console.log(error);
         return {
           props: {},
-          redirect: {
-            destination: '/auth/signin',
-          },
+          // redirect: {
+          //   destination: '/auth/signin',
+          // },
         };
       }
     }
   } else {
     return {
       props: {},
-      redirect: {
-        destination: '/auth/signin',
-      },
+      // redirect: {
+      //   destination: '/auth/signin',
+      // },
     };
   }
 };
